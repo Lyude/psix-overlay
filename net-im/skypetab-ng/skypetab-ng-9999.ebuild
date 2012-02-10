@@ -1,4 +1,4 @@
-EAPI=3
+EAPI=4
 
 inherit qt4-r2 git-2
 EGIT_REPO_URI="git://github.com/kekekeks/skypetab-ng.git"
@@ -6,13 +6,18 @@ EGIT_REPO_URI="git://github.com/kekekeks/skypetab-ng.git"
 DESCRIPTION="Tabssss"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="-* ~x86 ~amd64"
 IUSE=""
 
-DEPEND="net-im/skype"
-RDEPEND="${DEPEND}"
+DEPEND="
+	amd64? ( app-emulation/emul-linux-x86-qtlibs )
+	x86? ( x11-libs/qt-gui )
+"
+RDEPEND="
+	net-im/skype
+	${DEPEND}
+"
 
-src_configure() 
-{
-        eqmake4
+pkg_setup() {
+	use amd64 && multilib_toolchain_setup x86
 }
