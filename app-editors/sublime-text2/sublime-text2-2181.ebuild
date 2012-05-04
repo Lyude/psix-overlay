@@ -33,5 +33,5 @@ src_install() {
 	echo "PATH=/opt/${PN}" > ${env_file}
 	echo "ROOTPATH=/opt/${PN}" >> ${env_file}
 	doenvd ${env_file}
-	make_desktop_entry "subl" "Sublime Text Editor" "accessories-text-editor" "Application;TextEditor"
+	make_desktop_entry "sublime_text" "Sublime Text Editor" "accessories-text-editor" "Application;TextEditor"
 }
