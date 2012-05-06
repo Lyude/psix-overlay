@@ -6,7 +6,7 @@ EAPI="4"
 
 inherit eutils
 
-DESCRIPTION="Sublime Text is a sophisticated text editor for code, html and prose"
+DESCRIPTION="XAMPP is a free and open source cross-platform web server package."
 HOMEPAGE="http://www.apachefriends.org"
 SRC_URI="( http://downloads.sourceforge.net/${PN}/${PN}-linux-${PV}.tar.gz )"
 LICENSE="GPL-2"
@@ -19,11 +19,7 @@ RDEPEND="sys-libs/glibc[multilib]"
 S=${WORKDIR}/lampp
 
 src_install() {
-	insinto /opt/lampp
-	into /opt/lampp
-	exeinto /opt/lampp		
-       	rm ./bin/phar
-	dosym ./bin/phar.phar ./bin/phar
-	fperms 755 bin/*
-	doins -r *	
+	local dest="${ED}"/opt/lampp
+	mkdir -p "${dest}" || die
+	mv "${S}"/* "${dest}"/
 }
