@@ -59,6 +59,5 @@ src_install() {
 
 	webapp_configfile "${MY_HTDOCSDIR}"/libraries/config.default.php
 	webapp_serverowned "${MY_HTDOCSDIR}"/libraries/config.default.php
-
 	webapp_src_install
 }
