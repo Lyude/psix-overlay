@@ -1,10 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
-
 EAPI=3
 
-inherit cmake-utils eutils git 
+inherit cmake-utils eutils git-2
 
 DESCRIPTION="Tano can play almost every multimedia file, including SD and HD IP
 Television channels"

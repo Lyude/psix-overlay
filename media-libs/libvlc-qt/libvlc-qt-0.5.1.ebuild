@@ -4,7 +4,7 @@
 
 EAPI=3
 
-inherit cmake-utils git
+inherit cmake-utils git-2
 
 DESCRIPTION="VLC-Qt is a free library used to connect Qt and libvlc libraries."
 HOMEPAGE="http://tano.si/en/vlc-qt"
@@ -13,17 +13,15 @@ EGIT_REPO_URI="git://github.com/ntadej/vlc-qt"
 EGIT_BRANCH="master"
 EGIT_COMMIT="$PV"
 
-
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-   app-doc/doxygen
-   >=x11-libs/qt-core-4.6
-   media-video/vlc
+	app-doc/doxygen
+	>=x11-libs/qt-core-4.6
+	media-video/vlc
 "
 RDEPEND="${DEPEND}"
-
 S="${WORKDIR}/${P}"

@@ -10,7 +10,7 @@ DESCRIPTION="Sublime Text is a sophisticated text editor for code, html and pros
 HOMEPAGE="http://www.sublimetext.com"
 SRC_URI="amd64? ( http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202%20Build%20${PV}%20x64.tar.bz2 )
 	x86?  ( http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202%20Build%20${PV}.tar.bz2 )"
-LICENSE="Sublime"
+LICENSE="CUSTOM"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""

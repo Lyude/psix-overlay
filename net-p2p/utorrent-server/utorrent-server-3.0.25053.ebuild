@@ -6,7 +6,7 @@ inherit versionator
 
 MY_PV=$(replace_version_separator 2 '-')
 
-DESCRIPTION=""
+DESCRIPTION="Utorrent server"
 HOMEPAGE="http://www.utorrent.com/linux"
 SRC_URI="http://download.utorrent.com/linux/${PN}-${MY_PV}.tar.gz"
 
@@ -17,7 +17,9 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 RESTRICT="strip"
 
-RDEPEND=""
+RDEPEND="amd64? (
+		app-emulation/emul-linux-x86-compat
+		app-emulation/emul-linux-x86-baselibs )"
 
 S="bittorrent-server-v$(get_major_version)_$(get_version_component_range 2)"
 
