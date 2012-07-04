@@ -1,20 +1,20 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-panel/gnome-panel-2.32.1-r2.ebuild,v 1.12 2012/05/05 05:38:11 jdhore Exp $
+# $Header: $
 
-EAPI="3"
+EAPI="4"
 GCONF_DEBUG="no"
 PYTHON_DEPEND="2:2.5"
 
-inherit gnome2 python eutils autotools
+inherit gnome2 python unpacker eutils autotools
 
 DESCRIPTION="The MATE panel"
-HOMEPAGE="http://www.gnome.org/"
+HOMEPAGE="http://mate-desktop.org"
 SRC_URI="http://pub.mate-desktop.org/releases/1.2/${PN}-${PV}.tar.xz"
 
 LICENSE="GPL-2 FDL-1.1 LGPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm ia64 ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
+KEYWORDS="~amd64 ~x86"
 IUSE="+bonobo doc eds +introspection networkmanager"
 
 RDEPEND=">=gnome-base/gnome-desktop-2.26:2
@@ -68,27 +68,7 @@ pkg_setup() {
 	python_set_active_version 2
 }
 
-src_unpack() {
-	# If gobject-introspection is installed, we don't need the extra .m4
-	if has_version "dev-libs/gobject-introspection"; then
-		unpack ${P}.tar.bz2 ${P}-patches.tar.bz2
-	else
-		unpack ${A}
-	fi
-}
-
 src_prepare() {
-	# List the objects before the libraries to fix build with --as-needed
-	epatch "${FILESDIR}/${P}-as-needed.patch"
-
-	# Try to improve panel behavior on multiscreen systems, bug #348253, upstream #632369
-	epatch "${FILESDIR}/${PN}-2.32.1-fix-multiscreen.patch"
-	epatch "${FILESDIR}/${PN}-2.32.1-fix-multiscreen2.patch"
-
-	# Apply multiple bugfixes from 2.32 and master branches
-	# Also use gnome-applications.menu instead of applications.menu as it's the default value for us.
-	epatch "${WORKDIR}/${P}-patches"/*.patch
-
 	intltoolize --force --copy --automake || die "intltoolize failed"
 	AT_M4DIR=${WORKDIR} eautoreconf
 	gnome2_src_prepare
