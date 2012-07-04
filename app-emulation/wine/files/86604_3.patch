@@ -1,0 +1,25 @@
+--- a/server/fd.c
++++ b/server/fd.c
+@@ -2103,6 +2103,14 @@ void default_fd_cancel_async( struct fd *fd, struct process *process, struct thr
+         set_error( STATUS_NOT_FOUND );
+ }
+ 
++/* default update_async() fd routine */
++void default_fd_update_async( struct fd *fd )
++{
++    async_update( fd->read_q );
++    async_update( fd->write_q );
++    async_update( fd->wait_q );
++}
++
+ /* default flush() routine */
+ void no_flush( struct fd *fd, struct event **event )
+ {
+@@ -2350,6 +2358,7 @@ DECL_HANDLER(set_completion_info)
+         {
+             fd->completion = get_completion_obj( current->process, req->chandle, IO_COMPLETION_MODIFY_STATE );
+             fd->comp_key = req->ckey;
++            fd->fd_ops->update_async( fd );
+         }
+         else set_error( STATUS_INVALID_PARAMETER );
+         release_object( fd );
