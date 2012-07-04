@@ -27,7 +27,6 @@ SRC_URI="${SRC_URI}
 	)"
 #		win64? ( mirror://sourceforge/wine/wine_gecko-${GV}-x86_64.msi ) # win64 is broken by the diablo patches for me
 
-
 LICENSE="LGPL-2.1"
 SLOT="0"
 IUSE="alsa capi cups custom-cflags elibc_glibc fontconfig +gecko gnutls gphoto2 gsm gstreamer hardened jpeg lcms ldap mp3 ncurses nls odbc openal opencl +opengl +oss +perl png samba scanner selinux ssl test +threads +truetype udisks v4l +win32 +X xcomposite xinerama xml"
@@ -125,20 +124,13 @@ src_unpack() {
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.1.15-winegcc.patch #260726
 	epatch "${FILESDIR}"/${PN}-1.4_rc2-multilib-portage.patch #395615
-
-	#fixes graphics changing inside game as per upstream
-      	epatch "${FILESDIR}"/39565.patch 
-        
-        #needed for diablo 3 installer and launcher as per upstream
-	epatch "${FILESDIR}"/86102.patch 
-	epatch "${FILESDIR}"/86103.patch 
-	epatch "${FILESDIR}"/86104.patch 
-	epatch "${FILESDIR}"/86105.patch 
-        #regenerate files affected by above patches
-        tools/make_requests
-
-        epatch_user #282735
-
+	epatch "${FILESDIR}"/39565.patch
+	epatch "${FILESDIR}"/86102.patch
+	epatch "${FILESDIR}"/86103.patch
+	epatch "${FILESDIR}"/86104.patch
+	epatch "${FILESDIR}"/86105.patch
+	tools/make_requests
+	epatch_user #282735
 	eautoreconf
 	sed -i '/^UPDATE_DESKTOP_DATABASE/s:=.*:=true:' tools/Makefile.in || die
 	sed -i '/^MimeType/d' tools/wine.desktop || die #117785
@@ -151,7 +143,7 @@ do_configure() {
 
 	ECONF_SOURCE=${S} \
 	econf \
-		--sysconfdir=/etc/wine \
+	--sysconfdir=/etc/wine \
 		$(use_with alsa) \
 		$(use_with capi) \
 		$(use_with lcms cms) \
