@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layman>
+        <overlay
+                type="git"
+                src="git@github.com:zabuldon/psix-overlay.git"
+                contact="https://github.com/zabuldon/psix-overlay"
+                name="mate"
+                status="unofficial">
+
+        <link>git@github.com:zabuldon/psix-overlay.git</link>
+
+        <description>Linux MATE Overlay</description>
+        </overlay>
+</layman>
