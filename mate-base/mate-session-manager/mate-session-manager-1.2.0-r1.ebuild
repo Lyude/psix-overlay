@@ -77,7 +77,7 @@ src_prepare() {
 	# epatch "${FILESDIR}/${PN}-2.32.1-dialog-size2.patch"
 
 	eautoreconf
-        intltoolize --force --copy --automake || die "intltoolize failed"
+	intltoolize --force --copy --automake || die "intltoolize failed"
 	mate_src_prepare
 }
 

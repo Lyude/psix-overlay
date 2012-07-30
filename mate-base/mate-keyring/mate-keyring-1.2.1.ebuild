@@ -45,7 +45,7 @@ pkg_setup() {
 		$(use_enable test tests)
 		$(use_enable pam)
 		$(use_with pam pam-dir $(getpam_mod_dir))
-		--with-root-certs=${EPREFIX}/usr/share/ca-certificates/
+		--with-root-certs=${EPREFIX}"/usr/share/ca-certificates/"
 		--enable-acl-prompts
 		--enable-ssh-agent
 		--enable-gpg-agent

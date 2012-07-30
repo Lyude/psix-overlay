@@ -71,11 +71,9 @@ pkg_setup() {
 src_prepare() {
 	# Fix compiling with gnutls
 	epatch "${FILESDIR}/${P}-gnutls27.patch"
-	
 	gtkdocize || die
 	intltoolize --force --copy --automake || die "intltoolize failed"
 	eautoreconf
-
 	mate_src_prepare
 }
 

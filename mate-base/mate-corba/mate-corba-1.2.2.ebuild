@@ -39,24 +39,13 @@ pkg_setup() {
 }
 
 src_prepare() {
-        gtkdocize || die
-
-        eautoreconf
-
-	# Fix wrong process kill, bug #268142
-	# sed "s:killall lt-timeout-server:killall timeout-server:" \
-	#	-i test/timeout.sh || die "sed 1 failed"
-
-	# Do not mess with CFLAGS
+	gtkdocize || die
+	eautoreconf
 	sed 's/-ggdb -O0//' -i configure.in || die "sed 2 failed"
-
 	if ! use test; then
 		sed -i -e 's/test //' Makefile.am || die
 	fi
-
-	# Drop failing test, bug #331709
 	sed -i -e 's/test-mem //' test/Makefile.am || die
-	
 	mate_src_prepare
 }
 
@@ -77,7 +66,7 @@ src_configure() {
 
 src_compile() {
 	# Parallel build fails from time to time, bug #273031
-	MAKEOPTS="${MAKEOPTS} -j1"
+	MAKEOPTS="${MAKEOPTS}"
 	mate_src_compile
 }
 

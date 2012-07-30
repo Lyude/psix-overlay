@@ -6,7 +6,7 @@ EAPI="4"
 GCONF_DEBUG="yes"
 MATE_DESKTOP_ORG_MODULE="mate-conf"
 
-inherit mate
+inherit eutils mate
 
 DESCRIPTION="A configuration database system"
 HOMEPAGE="http://mate-desktop.org"

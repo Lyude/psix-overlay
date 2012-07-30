@@ -9,7 +9,7 @@ HOMEPAGE="http://mate-desktop.org"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~arm"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 RDEPEND=">=mate-base/mate-corba-1.2.2

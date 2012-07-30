@@ -20,6 +20,6 @@ DOCS="AUTHORS ChangeLog README"
 
 src_prepare() {
 	eautoreconf
-        intltoolize --force || die "intltoolize failed"
+	intltoolize --force || die "intltoolize failed"
 	mate_src_unpack
 }

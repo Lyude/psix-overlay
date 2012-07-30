@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>vortexius@gmail.com</email>
+	</maintainer>
+	<longdescription lang="en">
+		A session daemon for MATE that makes it easy to manage your laptop or desktop system
+	</longdescription>
+</pkgmetadata>

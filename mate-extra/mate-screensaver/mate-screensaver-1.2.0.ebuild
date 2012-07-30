@@ -5,7 +5,7 @@
 EAPI="4"
 GCONF_DEBUG="yes"
 
-inherit mate multilib
+inherit eutils mate multilib
 
 DESCRIPTION="Replaces xscreensaver, integrating with the MATE desktop."
 HOMEPAGE="http://mate-desktop.org"

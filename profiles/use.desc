@@ -1,0 +1,21 @@
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/profiles/use.desc,v 1.490 2012/07/12 22:14:46 dilfridge Exp $
+
+# Keep them sorted
+caja - Caja thumbnailer support
+mate - Adds MATE support
+mate-keyring - Enabke suopprt for storing passwords via mate-keyring
+gtk3 - Add GIMP toolkit 3 support
+mail - Add sends to email (mate-cinf used)
+gajim -Add gajim integration
+pidgin - Add pidgin integration
+upnp - Add upnp support
+introspection - Use dev-libs/gobject-introspection for introspection
+glade - Enable glade support
+compat - Installs gdialog for compatibility with older shell scripts which uses dev-lang/perl
+ps - add support of libspectre
+applet - add suppurt MATE applets
+twolame - Allow encoding MPEG Audio Layer 2 (MP2) files using twolame
+dvi - index dvi files
+t1lib - Enable support for T1lib font rendering (media-libs/t1lib)

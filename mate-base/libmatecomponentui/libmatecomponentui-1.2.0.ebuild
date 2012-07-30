@@ -56,8 +56,6 @@ src_prepare() {
 }
 
 src_configure() {
-	addpredict "/root/.gnome2_private"
-
 	mate_src_configure
 }
 

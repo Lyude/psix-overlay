@@ -5,7 +5,7 @@
 EAPI="4"
 GCONF_DEBUG="yes"
 
-inherit mate multilib
+inherit eutils user mate multilib
 
 DESCRIPTION="Fork of bluez-gnome focused on integration with MATE"
 HOMEPAGE="http://mate-desktop.org/"
