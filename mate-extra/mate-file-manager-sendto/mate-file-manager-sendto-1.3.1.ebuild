@@ -11,7 +11,7 @@ DESCRIPTION="Caja extension for sending files to locations"
 HOMEPAGE="http://www.mate-desktop.org"
 
 LICENSE="GPL-2"
-SLOT="1.3"
+SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="cdr doc gajim +mail pidgin upnp"
 

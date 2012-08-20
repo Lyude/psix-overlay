@@ -10,7 +10,7 @@ DESCRIPTION="Faenza icon theme, that was adapted for MATE desktop"
 HOMEPAGE="http://mate-desktop.org"
 
 LICENSE="GPL-3"
-SLOT="1.3"
+SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="minimal"
 
