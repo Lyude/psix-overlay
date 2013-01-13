@@ -39,7 +39,7 @@ RDEPEND="
 	x11-libs/cairo
 	x11-libs/gtk+:2
 	x11-libs/gtkglext
-	~x11-misc/cairo-dock-${PV}*
+	x11-misc/cairo-dock
 
 	alsa? ( media-libs/alsa-lib )
 	exif? ( media-libs/libexif )
