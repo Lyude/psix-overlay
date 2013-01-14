@@ -54,11 +54,8 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext
 "
 
-S="${WORKDIR}/${PN}-${MY_PV}"
+S="${WORKDIR}/${PN}-${MMD_PV}"
 
-src_prepare() {
-	epatch "${FILESDIR}/${P}-rpath.patch" || die
-}
 
 #src_configure() {
 #	econf $(use_enable xcomposite xextend)
